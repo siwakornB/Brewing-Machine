@@ -40,7 +40,9 @@ class App extends Component {
     return(
       <div>
       <div class="col1">
-        <Machine />
+        <Machine 
+        updatepress = {(p) => {this.Press(p)}}
+        />
       </div>
       <div class="col2">
         <div class="row1">
@@ -50,10 +52,6 @@ class App extends Component {
           next={this.next}
           reset={this.reset}
           prev={this.previous}
-          ptr={this.state.ptr}
-          cur={this.state.cur}
-          nextn={this.state.next}
-          his={this.state.history}
           readall={this.readall}
           />
         </div>
@@ -63,6 +61,11 @@ class App extends Component {
       </div>
       </div>
     );
+  }
+
+  Press(press){
+    let s = this.state.ip
+    this.setState({ip:s += press});
   }
 
   handlebox(v){
@@ -266,7 +269,12 @@ class Strbox extends Component{
         </li>
       );
     });*/
-
+    /*<h1>{this.props.value}</h1>
+        <h1>ptr ={this.props.ptr}</h1>
+        <h1>nextstring ={this.props.value[this.props.ptr]}</h1>
+        <h1>currentnode ={this.props.cur}</h1>
+        <h1>nextnode ={this.props.nextn}</h1>
+        <h1>{ console.log(this.props.his) }</h1>*/
 
     return(
       <div>
@@ -281,12 +289,7 @@ class Strbox extends Component{
         <button onClick={this.props.next} disabled={!this.state.isboxEn}>Read Next</button>
         <button onClick={this.props.readall} disabled={!this.state.isboxEn}>Read All</button>
         <br></br>
-        <h1>{this.props.value}</h1>
-        <h1>ptr ={this.props.ptr}</h1>
-        <h1>nextstring ={this.props.value[this.props.ptr]}</h1>
-        <h1>currentnode ={this.props.cur}</h1>
-        <h1>nextnode ={this.props.nextn}</h1>
-        <h1>{ console.log(this.props.his) }</h1>
+        
       </div>
     );
   }
@@ -403,15 +406,15 @@ class Machine extends Component{
     return(
       <div>
         <img class="machine" src="./img/Machine.png" alt=";("/>
-              <button class="latte mc"></button>
-              <button class="espres mc"></button>
-              <button class="mocca mc"></button>
-              <button class="lv1 mc"></button>
-              <button class="lv2 mc"></button>
-              <button class="ice mc"></button>
-              <button class="hot mc"></button>
-              <button class="cancel">Cancel</button>
-              <button class="token">Insert Cash(t)</button>
+              <button class="latte mc" onClick={() => this.props.updatepress('l')}></button>
+              <button class="espres mc" onClick={() => this.props.updatepress('e')}></button>
+              <button class="mocca mc" onClick={() => this.props.updatepress('m')}></button>
+              <button class="lv1 mc" onClick={() => this.props.updatepress('1')}></button>
+              <button class="lv2 mc" onClick={() => this.props.updatepress('2')}></button>
+              <button class="ice mc" onClick={() => this.props.updatepress('i')}></button>
+              <button class="hot mc" onClick={() => this.props.updatepress('h')}></button>
+              <button class="cancel" onClick={() => this.props.updatepress('c')}>Cancel</button>
+              <button class="token" onClick={() => this.props.updatepress('t')}>Insert Cash(t)</button>
       </div>      
     );
   }
