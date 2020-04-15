@@ -38,7 +38,11 @@ class App extends Component {
   render(){
       
     return(
-      <div class="col">
+      <div>
+      <div class="col1">
+        <Machine />
+      </div>
+      <div class="col2">
         <div class="row1">
           <Strbox value={this.state.ip} 
           updatebox={this.handlebox}
@@ -56,6 +60,7 @@ class App extends Component {
         <div class="row2">
           <DFA cur={this.state.cur}/>
         </div>
+      </div>
       </div>
     );
   }
@@ -393,5 +398,23 @@ class DFA extends Component{
 
 }
 
+class Machine extends Component{
+  render(){
+    return(
+      <div>
+        <img class="machine" src="./img/Machine.png" alt=";("/>
+              <button class="latte mc"></button>
+              <button class="espres mc"></button>
+              <button class="mocca mc"></button>
+              <button class="lv1 mc"></button>
+              <button class="lv2 mc"></button>
+              <button class="ice mc"></button>
+              <button class="hot mc"></button>
+              <button class="cancel">Cancel</button>
+              <button class="token">Insert Cash(t)</button>
+      </div>      
+    );
+  }
+}
 
 export default App;
