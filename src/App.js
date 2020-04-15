@@ -138,7 +138,7 @@ class App extends Component {
       case 'h': {this.hot(next); break;}
       case 't': {this.tang(next); break;}
       case 'f': {this.final(); break;}
-      case 'c': {this.cancel(); break;}
+      case 'trap': {this.trap(); break;}
       default: this.init(next);
     }
   }
@@ -237,7 +237,7 @@ class App extends Component {
   }
 
   final(){
-    this.setState({next:'trap'});
+      
   }
 
   cancel(){
