@@ -33,6 +33,7 @@ class App extends Component {
     this.previous = this.previous.bind(this);
     this.start = this.start.bind(this);
     this.reset = this.reset.bind(this);
+    this.readall = this.readall.bind(this);
   }
   render(){
       
@@ -49,6 +50,7 @@ class App extends Component {
           cur={this.state.cur}
           nextn={this.state.next}
           his={this.state.history}
+          readall={this.readall}
           />
         </div>
         <div class="row2">
@@ -60,6 +62,16 @@ class App extends Component {
 
   handlebox(v){
     this.setState({ip:v});
+  }
+
+  readall(){
+    if(this.state.ip.length !== this.state.ptr){
+      setTimeout(() =>{//Start the timer
+      this.next(); 
+      this.readall();
+    } 
+      , 1000);//After 1 second
+    }
   }
   
   save(){
@@ -175,6 +187,9 @@ class App extends Component {
 
   ice(n){
     switch(n){
+      case 'l': {this.setState({next:'l'}); break;}
+      case 'e': {this.setState({next:'e'}); break;}
+      case 'm': {this.setState({next:'m'}); break;}
       case '1': {this.setState({next:'1'}); break;}
       case '2': {this.setState({next:'2'}); break;}
       case 'i': {this.setState({next:'i'}); break;}
@@ -187,6 +202,9 @@ class App extends Component {
 
   hot(n){
     switch(n){
+      case 'l': {this.setState({next:'l'}); break;}
+      case 'e': {this.setState({next:'e'}); break;}
+      case 'm': {this.setState({next:'m'}); break;}
       case '1': {this.setState({next:'1'}); break;}
       case '2': {this.setState({next:'2'}); break;}
       case 'i': {this.setState({next:'i'}); break;}
@@ -252,11 +270,11 @@ class Strbox extends Component{
         </input>
         <button type="button" onClick={this.handleRand}>Random<br></br>String</button>
         <br></br>
-        <button variant="primary" onClick={this.handleStart}>Start</button>
+        <button variant="primary" onClick={this.handleStart} disabled={this.state.isboxEn}>Start</button>
         <button onClick={this.handleReset}>Reset</button>
-        <button onClick={this.props.prev}>Previous</button>
-        <button onClick={this.props.next}>Read Next</button>
-        <button >Read All</button>
+        <button onClick={this.props.prev} disabled={!this.state.isboxEn}>Previous</button>
+        <button onClick={this.props.next} disabled={!this.state.isboxEn}>Read Next</button>
+        <button onClick={this.props.readall} disabled={!this.state.isboxEn}>Read All</button>
         <br></br>
         <h1>{this.props.value}</h1>
         <h1>ptr ={this.props.ptr}</h1>
