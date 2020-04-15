@@ -21,6 +21,7 @@ class App extends Component {
     
 
     this.state={
+      en:false,
       ip:"",
       ptr:0,
       cur:'0',
@@ -53,6 +54,7 @@ class App extends Component {
           reset={this.reset}
           prev={this.previous}
           readall={this.readall}
+          setEn={() => this.setEn()}
           />
         </div>
         <div class="row2">
@@ -63,7 +65,12 @@ class App extends Component {
     );
   }
 
+  setEn(){
+    this.setState({en:!this.state.en});
+  }
+
   Press(press){
+    if(this.state.en === true) return;
     let s = this.state.ip
     this.setState({ip:s += press});
   }
@@ -145,11 +152,12 @@ class App extends Component {
 
   start(){
     this.startread();
-    //this.setState({cur:'0'});
+    this.setEn();
   }
 
   reset(){
     this.setState({
+      en:false,
       ip:"",
       ptr:0,
       cur:'0',
@@ -278,11 +286,10 @@ class Strbox extends Component{
 
     return(
       <div>
-        <h2>Put string here</h2>
-        <input type="text" value ={this.props.value} onChange={this.update} disabled={this.state.isboxEn}>      
-        </input>
-        <button type="button" onClick={this.handleRand}>Random<br></br>String</button>
+        <h2>string here</h2>
+        <h1>{this.props.value}</h1>
         <br></br>
+        <button type="button" onClick={this.handleRand}>Random<br></br>String</button>
         <button variant="primary" onClick={this.handleStart} disabled={this.state.isboxEn}>Start</button>
         <button onClick={this.handleReset}>Reset</button>
         <button onClick={this.props.prev} disabled={!this.state.isboxEn}>Previous</button>

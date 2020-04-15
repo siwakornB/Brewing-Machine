@@ -127,7 +127,7 @@ button:hover{
 }
 
 @media screen and (max-width: 1200px){
-    .right{
+    .col2{
         left: 30px;
         top: 740px;
         position: relative;
