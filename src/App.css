@@ -2,7 +2,14 @@
   text-align: center;
 }
 img{
-  width: 100%;
+  position: absolute;
+  width: 770px;
+  height: 450px;
+  top: 321px;
+
+  border: 3px solid #FFFFFF;
+  border-radius: 10px;
+
 }
 /*
 .App-logo {
@@ -43,6 +50,8 @@ img{
 body{
   width: 1440px;
   overflow: auto;
+  background-color: #695032;
+  color: white;
 }
       
 .col1{
@@ -54,76 +63,188 @@ body{
     left: 660px;
     width: 700px;
 }
-.machine {
+img.machine {
     display: block;
     position: absolute;
-    left: 30px;
-    width: 600px;
+    width: 613px;
+    height: 751px;
+    left: 20px;
+    top: 20px;
+    border: 3px solid #FFFFFF;
+    border-radius: 10px;
 
 }
 button.mc {
-    background-color: #cfd0d5; /* Green */
-    border: none;
-    color: white;
     padding: 20px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     position: absolute;
     border-radius: 50%;
+
+    background: #C4C4C4;
+    border: 3px solid #878787;
+    box-sizing: border-box;
 }
 .latte{
-    left: 585px;
-    top: 15px;
+  left: 587px;
+  top: 34px;
 }
 .espres{
-    left: 585px;
-    top: 73px;
+  left: 587px;
+  top: 98px;
 }
 .mocca{
-    left: 585px;
-    top: 135px;
+  left: 587px;
+  top: 161px;
 }
 .lv1{
-    left: 585px;
-    top: 197px;
+  left: 587px;
+  top: 223px;
 }
 .lv2{
-    left: 585px;
-    top: 259px;
+  left: 587px;
+  top: 285px;
 }
 .ice{
-    left: 585px;
-    top: 321px;
+  left: 587px;
+  top: 351px;
 }
 .hot{
-    left: 585px;
-    top: 383px;
-}
-
-.cancel{
-    position: relative;
-    left: 480px;
-    top: 572px;
-    background-color: red;
-    padding: 10px 20px;
-    width: 107px;
-    border-radius: 15px;
+  left: 587px;
+  top: 414px;
 }
 
 .token{
   position: absolute;
-    left: 433px;
-    top: 524px;
-    background-color: blue;
-    padding: 10px 40px;
-    border-radius: 5px;
-    width: 186px;
+  width: 185px;
+  height: 35px;
+  left: 434px;
+  top: 578px;
+  color: white;
+
+  background: #5B8857;
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+}
+
+.cancel{
+  position: absolute;
+  width: 137px;
+  height: 46.07px;
+  left: 458px;
+  top: 658px;
+  background: #FF0000;
+  border: 2px solid #FFFFFF;
+  border-radius: 20px;
+  color: white;
 }
 
 button:hover{
     background-color: #707174;
+}
+
+
+/*-------------------------------------------------------------------------*/
+.random{
+  position: absolute;
+  width: 180px;
+  height: 50px;
+  left: 568px;
+  top: 140px;
+
+  background: #3542B6;
+  border: 3px solid #FFFFFF;
+  border-radius: 15px;
+
+  color: white;
+}
+.start{
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  left: 13px;
+  top: 225px;
+
+  background: #92FF96;
+  border: 3px solid #FFFFFF;
+  border-radius: 15px;
+}
+
+.reset{
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  left: 163px;
+  top: 225px;
+
+  background: #FF9292;
+  border: 3px solid #FFFFFF;
+  border-radius: 15px;
+}
+
+.previous{
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  left: 313px;
+  top: 225px;
+
+  background: #C4C4C4;
+  border: 3px solid #FFFFFF;
+  border-radius: 15px;
+}
+
+.next{
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  left: 463px;
+  top: 225px;
+
+  background: #C4C4C4;
+  border: 3px solid #FFFFFF;
+  border-radius: 15px;
+}
+
+.all{
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  left: 613px;
+  top: 225px;
+
+  background: #C4C4C4;
+  border: 3px solid #FFFFFF;
+  border-radius: 15px;
+}
+
+.string{
+  position: absolute;
+  width: 544px;
+  height: 42px;
+  left: 13px;
+  top: 115px;
+
+  /*font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;*/
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.title{
+  position: absolute;
+width: 631px;
+height: 35px;
+left: 63px;
+top: 48px;
+/*
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;*/
+font-size: 30px;
+line-height: 35px;
+
+color: #FFFFFF;
 }
 
 @media screen and (max-width: 1200px){

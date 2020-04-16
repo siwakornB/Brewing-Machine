@@ -286,15 +286,15 @@ class Strbox extends Component{
 
     return(
       <div>
-        <h2>string here</h2>
-        <h1>{this.props.value}</h1>
+        <div class="title">เครื่องชงกาแฟอัติโนมัติ (Brewing Coffee Machine)</div>
+        <h2 class="string">String: {this.props.value}</h2>
         <br></br>
-        <button type="button" onClick={this.handleRand}>Random<br></br>String</button>
-        <button variant="primary" onClick={this.handleStart} disabled={this.state.isboxEn}>Start</button>
-        <button onClick={this.handleReset}>Reset</button>
-        <button onClick={this.props.prev} disabled={!this.state.isboxEn}>Previous</button>
-        <button onClick={this.props.next} disabled={!this.state.isboxEn}>Read Next</button>
-        <button onClick={this.props.readall} disabled={!this.state.isboxEn}>Read All</button>
+        <button class="random" type="button" onClick={this.handleRand}>Random<br></br>String</button>
+        <button class="start" variant="primary" onClick={this.handleStart} disabled={this.state.isboxEn}>Start</button>
+        <button class="reset" onClick={this.handleReset}>Reset</button>
+        <button class="previous" onClick={this.props.prev} disabled={!this.state.isboxEn}>Previous</button>
+        <button class="next" onClick={this.props.next} disabled={!this.state.isboxEn}>Read Next</button>
+        <button class="all" onClick={this.props.readall} disabled={!this.state.isboxEn}>Read All</button>
         <br></br>
         
       </div>
@@ -340,67 +340,67 @@ class DFA extends Component{
       case 'l':{
         return(
         <div>
-            <img src={latt} style={{width: 1080, height: 600}} alt=":("/>
+            <img src={latt}  alt=":("/>
         </div>
       ); }
       case 'm':{
         return(
         <div>
-            <img src={moc} style={{width: 1080, height: 600}} alt=":("/>
+            <img src={moc}  alt=":("/>
         </div>
       ); }
       case 'e':{
         return(
         <div>
-            <img src={esp}style={{width: 1080, height: 600}} alt=":("/>
+            <img src={esp} alt=":("/>
         </div>
       ); }
       case '1':{
         return(
         <div>
-            <img src={lv1} style={{width: 1080, height: 600}} alt=":("/>
+            <img src={lv1}  alt=":("/>
         </div>
       ); }
       case '2':{
         return(
         <div>
-            <img src={lv2} style={{width: 1080, height: 600}} alt=":("/>
+            <img src={lv2}  alt=":("/>
         </div>
       ); }
       case 'i':{
         return(
         <div>
-            <img src={ice} style={{width: 1080, height: 600}} alt=":("/>
+            <img src={ice}  alt=":("/>
         </div>
       ); }
       case 'h':{
         return(
         <div>
-            <img src={hot} style={{width: 1080, height: 600}} alt=":("/>
+            <img src={hot}  alt=":("/>
         </div>
       ); }
       case 't':{
         return(
         <div>
-            <img src={money} style={{width: 1080, height: 600}} alt=":("/>
+            <img src={money}  alt=":("/>
         </div>
       ); }
       case 'f':{
         return(
         <div>
-            <img src={fin} style={{width: 1080, height: 600}} alt=":("/>
+            <img src={fin}  alt=":("/>
         </div>
       ); }
       case 'trap':{
         return(
         <div>
-            <img src={trap} style={{width: 1080, height: 600}} alt=":("/>
+            <img src={trap}  alt=":("/>
         </div>
       ); }
       default:{
         return(
         <div>
-            <img src={init} style={{width: 1080, height: 600}} alt=":("/>
+            <img src={init} alt=":("/>
         </div>
       );}
     }
@@ -412,7 +412,7 @@ class Machine extends Component{
   render(){
     return(
       <div>
-        <img class="machine" src="./img/Machine.png" alt=";("/>
+        <img class="machine" src="./img/Machine1.png" alt=";("/>
               <button class="latte mc" onClick={() => this.props.updatepress('l')}></button>
               <button class="espres mc" onClick={() => this.props.updatepress('e')}></button>
               <button class="mocca mc" onClick={() => this.props.updatepress('m')}></button>
@@ -420,7 +420,7 @@ class Machine extends Component{
               <button class="lv2 mc" onClick={() => this.props.updatepress('2')}></button>
               <button class="ice mc" onClick={() => this.props.updatepress('i')}></button>
               <button class="hot mc" onClick={() => this.props.updatepress('h')}></button>
-              <button class="cancel" onClick={() => this.props.updatepress('c')}>Cancel</button>
+              <button class="cancel" onClick={() => this.props.updatepress('c')}>Cancel(c)</button>
               <button class="token" onClick={() => this.props.updatepress('t')}>Insert Cash(t)</button>
       </div>      
     );
