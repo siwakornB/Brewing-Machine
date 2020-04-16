@@ -65,14 +65,11 @@ class App extends Component {
     );
   }
 
-  setEn(){
-    this.setState({en:!this.state.en});
-  }
-
   Press(press){
-    if(this.state.en === true) return;
-    let s = this.state.ip
-    this.setState({ip:s += press});
+    if(this.state.en === false && this.state.ip.length <= 20){
+      let s = this.state.ip;
+      this.setState({ip:s += press});
+    }
   }
 
   handlebox(v){
@@ -152,7 +149,7 @@ class App extends Component {
 
   start(){
     this.startread();
-    this.setEn();
+    this.setState({en:true});
   }
 
   reset(){
@@ -233,11 +230,6 @@ class App extends Component {
 
   tang(n){
     switch(n){
-      case 'l': {this.setState({next:'l'}); break;}
-      case 'e': {this.setState({next:'e'}); break;}
-      case 'm': {this.setState({next:'m'}); break;}
-      case 'i': {this.setState({next:'i'}); break;}
-      case 'h': {this.setState({next:'h'}); break;}
       case 't': {this.setState({next:'f'}); break;}
       case 'c': {this.setState({next:'0'}); break;}
       default:
