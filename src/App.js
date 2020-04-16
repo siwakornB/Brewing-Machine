@@ -283,7 +283,10 @@ class Strbox extends Component{
         <h2 class="string">String: {this.props.value}</h2>
         <div class="boxstring"></div>
         <br></br>
-        <button class="random" type="button" onClick={this.handleRand}>Random<br></br>String</button>
+        <div class="dfatx">
+          DFA<br></br>Diagran
+        </div>
+        <button class="random" type="button" onClick={this.handleRand}>Random String</button>
         <button class="start" variant="primary" onClick={this.handleStart} disabled={this.state.isboxEn}>Start</button>
         <button class="reset" onClick={this.handleReset}>Reset</button>
         <button class="previous" onClick={this.props.prev} disabled={!this.state.isboxEn}>Previous</button>
@@ -291,7 +294,9 @@ class Strbox extends Component{
         <button class="all" onClick={this.props.readall} disabled={!this.state.isboxEn}>Read All</button>
         <br></br>
         
+        
       </div>
+      
     );
   }
   update(event){
