@@ -130,9 +130,10 @@ class App extends Component {
   
   startread2(){
     
-    let str = this.state.ip; //l e m 1 2 i h t c
-    let next = str[this.state.ptr]
-    switch(this.state.cur){
+    let str = this.state.ip; //l e m 1 2 i h t c string
+    console.log((this.state.ip).substring(0,this.state.ptr),(this.state.ip.substring(this.state.ptr+1))); //(this.state.ip).split((this.state.ip)[this.state.ptr]),
+    let next = str[this.state.ptr] //index
+    switch(this.state.cur){  //current state
       case 'l': {this.coffee(next); break;}
       case 'e': {this.coffee(next); break;}
       case 'm': {this.coffee(next); break;}
@@ -276,11 +277,16 @@ class Strbox extends Component{
         <h1>nextnode ={this.props.nextn}</h1>
         <h1>{ console.log(this.props.his) }</h1>*/
 
+        /*
+        (this.state.ip).substring(0,this.state.ptr)
+        */ 
+
     return(
       <div class="boxtop">
         <div class="title">เครื่องชงกาแฟอัติโนมัติ (Brewing Coffee Machine)</div>
         <hr></hr>
         <h2 class="string">String: {this.props.value}</h2>
+        
         <div class="boxstring"></div>
         <br></br>
         <div class="dfatx">
@@ -412,6 +418,19 @@ class Machine extends Component{
     return(
       <div>
         <img class="machine" src="./img/Machine1.png" alt=";("/>
+        <img class="bank" src = "./img/insert.png"/>
+        <div class="howto">
+          <b style={{color: "red"}}>วิธีใช้</b> <br></br>
+            1. เลือกกาแฟ <br></br>
+            2. เลือกระดับความหวาน
+              <li>LV1 คือ หวานน้อย</li>
+              <li>LV2 คือ หวานปกติ</li>
+            3. เลือกร้อน เย็น
+                 <li>ร้อน ราคา 20 บาท</li>
+                 <li>เย็น ราคา 40 บาท</li>
+            4. จ่ายเงิน <br></br>
+            <li>หยอดครั้งละ 20 บาท</li>
+        </div>
               <button class="latte mc" onClick={() => this.props.updatepress('l')}></button>
               <button class="espres mc" onClick={() => this.props.updatepress('e')}></button>
               <button class="mocca mc" onClick={() => this.props.updatepress('m')}></button>

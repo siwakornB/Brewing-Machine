@@ -279,6 +279,20 @@ border: 3px solid #FFFFFF;
 border-radius: 10px;
 }
 
+.howto{
+  position: absolute;
+width: 235px;
+left: 108px;
+top: 94px;
+
+background: #F8DAB7;
+border: 5px solid #695032;
+box-sizing: border-box;
+border-radius: 22px;
+color: black;
+padding: 20px;
+}
+
 .dfatx{
   position: absolute;
 width: 135px;
@@ -291,6 +305,16 @@ line-height: 42px;
 text-align: right;
 
 color: #FFFFFF;
+}
+
+.bank{
+  position: absolute;
+  width: 185px;
+  height: 46px;
+  left: 434px;
+  top: 523px;
+  border: 3px white;
+
 }
 
 @media screen and (max-width: 1200px){
