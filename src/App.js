@@ -237,8 +237,12 @@ class App extends Component {
     }
   }
 
+  trap(){
+    
+  }
+
   final(){
-      
+    this.setState({next:'trap'});
   }
 
   cancel(){
