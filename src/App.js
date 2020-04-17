@@ -289,9 +289,6 @@ class Strbox extends Component{
         
         <div class="boxstring"></div>
         <br></br>
-        <div class="dfatx">
-          DFA<br></br>Diagran
-        </div>
         <button class="random" type="button" onClick={this.handleRand}>Random String</button>
         <button class="start" variant="primary" onClick={this.handleStart} disabled={this.state.isboxEn}>Start</button>
         <button class="reset" onClick={this.handleReset}>Reset</button>
