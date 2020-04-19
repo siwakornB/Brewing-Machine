@@ -298,10 +298,13 @@ class Strbox extends Component{
       <div class="boxtop">
         <div class="title">เครื่องชงกาแฟอัติโนมัติ (Brewing Coffee Machine)</div>
         <hr></hr>
-        <h2 class="string">String:
-        {reactStringReplace(this.props.value, this.props.value[this.props.ptr], (match, i) => (
-          <span key={i} style={{ color: 'red' }}>{match}</span>
-        ))}</h2>
+        <div class="string" >
+          <div style={{display: 'inline'}}>String: {this.props.value.substring(0,this.props.ptr)}</div>
+          <div style={{color: 'red',display: 'inline'}}><b>{this.props.value[this.props.ptr]}</b></div>
+          <div style={{display: 'inline'}}>{this.props.value.substring(this.props.ptr+1)}</div>
+        </div>
+        
+        
         <div class="boxstring"></div>
         <br></br>
         <button class="random" type="button" onClick={this.handleRand}>Random String</button>
