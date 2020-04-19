@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 
-const reactStringReplace = require('react-string-replace')
+//const reactStringReplace = require('react-string-replace')
 
 const init = require('./pic/1.jpg');
 const moc = require('./pic/2.jpg');
@@ -28,6 +28,7 @@ class App extends Component {
       ptr:0,
       cur:'0',
       next:'0',
+      result:'',
       history: [{ node: ['0','0']}]
     }
 
@@ -59,8 +60,6 @@ class App extends Component {
         <div class="row1">
           <Strbox value={this.state.ip}
           ptr={this.state.ptr}
-          cur={this.props.cur}
-          next={this.props.next}
           updatebox={this.handlebox}
           start={this.start}
           next={this.next}
@@ -71,7 +70,7 @@ class App extends Component {
           />
         </div>
         <div class="row2">
-          <DFA cur={this.state.cur}/>
+          <DFA cur={this.state.cur} result={this.state.result}/>
         </div>
       </div>
       </div>
@@ -105,15 +104,13 @@ class App extends Component {
   }
 
   next(){
-    if(this.state.ip.length !== this.state.ptr){
+    if(this.state.ip.length > this.state.ptr){
       this.setState(() => ({
       ptr:this.state.ptr + 1
-   }), ()=>{    
-    this.save();
-    this.startread();
-   });
-    }else{
-
+      }), ()=>{
+        this.save();
+        this.startread();
+      });
     }
   }
 
@@ -127,6 +124,15 @@ class App extends Component {
       let node = temp.node.slice();
       history.pop();
       this.setState({cur:node[0],next:node[1],history:history})
+      if(this.state.ip.length === this.state.ptr){
+        if(this.state.cur === 'f'){
+          this.setState({result:"Accept"});
+        }else{
+          this.setState({result:"Reject"});
+        }
+      }else{
+        this.setState({result:""});
+      }
      });
       
     }
@@ -142,7 +148,15 @@ class App extends Component {
   }
   
   startread2(){
-    
+    if(this.state.ip.length === this.state.ptr){
+      if(this.state.cur === 'f'){
+        this.setState({result:"Accept"});
+      }else{
+        this.setState({result:"Reject"});
+      }
+    }else{
+      this.setState({result:""});
+    }
     let str = this.state.ip; //l e m 1 2 i h t c string
     //console.log((this.state.ip).substring(0,this.state.ptr),(this.state.ip.substring(this.state.ptr+1))); //(this.state.ip).split((this.state.ip)[this.state.ptr]),
     let next = str[this.state.ptr] //index
@@ -173,6 +187,7 @@ class App extends Component {
       ptr:0,
       cur:'0',
       next:'0',
+      result:'',
       history: [{ node: ['0','0',0]}]
     });
   }
@@ -364,72 +379,84 @@ class DFA extends Component{
 
 
   set(){
+    const result = <h1 class="dfatx" style={{color:'green'}}>{this.props.result}</h1>
     switch(this.props.cur){
       
       case 'l':{
         return(
         <div>
             <img src={latt}  alt=":("/>
+            {result}
         </div>
       ); }
       case 'm':{
         return(
         <div>
             <img src={moc}  alt=":("/>
+            {result}
         </div>
       ); }
       case 'e':{
         return(
         <div>
             <img src={esp} alt=":("/>
+            {result}
         </div>
       ); }
       case '1':{
         return(
         <div>
             <img src={lv1}  alt=":("/>
+            {result}
         </div>
       ); }
       case '2':{
         return(
         <div>
             <img src={lv2}  alt=":("/>
+            {result}
         </div>
       ); }
       case 'i':{
         return(
         <div>
             <img src={ice}  alt=":("/>
+            {result}
         </div>
       ); }
       case 'h':{
         return(
         <div>
             <img src={hot}  alt=":("/>
+            {result}
         </div>
       ); }
       case 't':{
         return(
         <div>
             <img src={money}  alt=":("/>
+            {result}
         </div>
       ); }
       case 'f':{
         return(
         <div>
             <img src={fin}  alt=":("/>
+            {result}
         </div>
       ); }
       case 'trap':{
         return(
         <div>
             <img src={trap}  alt=":("/>
+            {result}
         </div>
       ); }
       default:{
         return(
         <div>
             <img src={init} alt=":("/>
+            {result}
         </div>
       );}
     }
@@ -442,7 +469,7 @@ class Machine extends Component{
     return(
       <div>
         <img class="machine" src="./img/Machine1.png" alt=";("/>
-        <img class="bank" src = "./img/insert.png"/>
+        <img class="bank" src = "./img/insert.png" alt=";("/>
         <div class="howto">
           <b style={{color: "red"}}>วิธีใช้</b> <br></br>
             1. เลือกกาแฟ <br></br>
@@ -464,7 +491,7 @@ class Machine extends Component{
               <button class="hot mc" onClick={() => this.props.updatepress('h')}></button>
               <button class="cancel" onClick={() => this.props.updatepress('c')}>Cancel(c)</button>
               <button class="token" onClick={() => this.props.updatepress('t')}>Insert Cash(t)</button>
-      </div>      
+      </div>    
     );
   }
 }
