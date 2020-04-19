@@ -379,7 +379,11 @@ class DFA extends Component{
 
 
   set(){
-    const result = <h1 class="dfatx" style={{color:'green'}}>{this.props.result}</h1>
+    if(this.props.result === "Accept"){
+      var result = <h1 class="dfatx" style={{color:'green'}}>{this.props.result}</h1>
+    }else{
+      var result = <h1 class="dfatx" style={{color:'red'}}>{this.props.result}</h1>
+    }
     switch(this.props.cur){
       
       case 'l':{
