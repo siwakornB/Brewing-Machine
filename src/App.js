@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 
+const reactStringReplace = require('react-string-replace')
+
 const init = require('./pic/1.jpg');
 const moc = require('./pic/2.jpg');
 const esp = require('./pic/3.jpg');
@@ -47,7 +49,10 @@ class App extends Component {
       </div>
       <div class="col2">
         <div class="row1">
-          <Strbox value={this.state.ip} 
+          <Strbox value={this.state.ip}
+          ptr={this.state.ptr}
+          cur={this.props.cur}
+          next={this.props.next}
           updatebox={this.handlebox}
           start={this.start}
           next={this.next}
@@ -131,7 +136,7 @@ class App extends Component {
   startread2(){
     
     let str = this.state.ip; //l e m 1 2 i h t c string
-    console.log((this.state.ip).substring(0,this.state.ptr),(this.state.ip.substring(this.state.ptr+1))); //(this.state.ip).split((this.state.ip)[this.state.ptr]),
+    //console.log((this.state.ip).substring(0,this.state.ptr),(this.state.ip.substring(this.state.ptr+1))); //(this.state.ip).split((this.state.ip)[this.state.ptr]),
     let next = str[this.state.ptr] //index
     switch(this.state.cur){  //current state
       case 'l': {this.coffee(next); break;}
@@ -283,14 +288,20 @@ class Strbox extends Component{
 
         /*
         (this.state.ip).substring(0,this.state.ptr)
-        */ 
-
+        */
+      
+      /*reactStringReplace(s, /(\d+)/g, (match, i) => (
+        <span key={i} style={{ color: 'red' }}>{match}</span>
+      ));*/
+      //console.log(this.props.value[this.props.ptr]);
     return(
       <div class="boxtop">
         <div class="title">เครื่องชงกาแฟอัติโนมัติ (Brewing Coffee Machine)</div>
         <hr></hr>
-        <h2 class="string">String: {this.props.value}</h2>
-        
+        <h2 class="string">String:
+        {reactStringReplace(this.props.value, this.props.value[this.props.ptr], (match, i) => (
+          <span key={i} style={{ color: 'red' }}>{match}</span>
+        ))}</h2>
         <div class="boxstring"></div>
         <br></br>
         <button class="random" type="button" onClick={this.handleRand}>Random String</button>
@@ -300,7 +311,6 @@ class Strbox extends Component{
         <button class="next" onClick={this.props.next} disabled={!this.state.isboxEn}>Next</button>
         <button class="all" onClick={this.props.readall} disabled={!this.state.isboxEn}>Read All</button>
         <br></br>
-        
         
       </div>
       
