@@ -303,7 +303,6 @@ class Strbox extends Component{
       ));*/
       //console.log(this.props.value[this.props.ptr]);
     return(
-      <div>
       
       <div class="boxtop">
         <div class="title">เครื่องชงกาแฟอัติโนมัติ (Brewing Coffee Machine)</div>
@@ -325,7 +324,6 @@ class Strbox extends Component{
         <button class="all" onClick={this.props.readall} disabled={!this.state.isboxEn}>Read All</button>
         <br></br>
         
-      </div>
       </div>
     );
   }

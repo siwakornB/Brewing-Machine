@@ -48,8 +48,6 @@ img{
 }*/
 
 body{
-  width: 1440px;
-  height: 800px;
   overflow: auto;
   background-color: #695032;
   color: white;
@@ -63,6 +61,7 @@ body{
     position: relative;
     left: 660px;
     width: 700px;
+    margin-right: 20px;
 }
 img.machine {
     display: block;
@@ -73,6 +72,7 @@ img.machine {
     top: 20px;
     border: 3px solid #FFFFFF;
     border-radius: 10px;
+    margin-right: 20px;
 
 }
 button.mc {
@@ -333,6 +333,7 @@ color: #FFFFFF;
 }
 
 @media screen and (max-width: 1200px){
+  
   .groupname{
     top: 1565px;
   }  
