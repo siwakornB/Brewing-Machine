@@ -379,10 +379,11 @@ class DFA extends Component{
 
 
   set(){
+    var result;
     if(this.props.result === "Accept"){
-      var result = <h1 class="dfatx" style={{color:'green'}}>{this.props.result}</h1>
+      result = <h1 class="dfatx" style={{color:'green'}}>{this.props.result}</h1>
     }else{
-      var result = <h1 class="dfatx" style={{color:'red'}}>{this.props.result}</h1>
+      result = <h1 class="dfatx" style={{color:'red'}}>{this.props.result}</h1>
     }
     switch(this.props.cur){
       
