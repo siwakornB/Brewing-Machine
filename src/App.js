@@ -42,14 +42,6 @@ class App extends Component {
       
     return(
       <div>
-        <div class="groupname">
-          <div style={{textAlign:"center", fontSize: "30px"}}>สมาชิก<br></br></div>
-        60010659 นายพรเทพ หล่มแสง<br></br>
-        60010912 วโรดม ใบอุดม<br></br>
-        60010916 วัชรเกียรติ ว่องเจริญพร<br></br>
-        60010986 ศิวกรณ์ บุญพามี<br></br>
-
-      </div>
       <div class="col1">
         <Machine 
         updatepress = {(p) => {this.Press(p)}}
@@ -303,6 +295,7 @@ class Strbox extends Component{
       ));*/
       //console.log(this.props.value[this.props.ptr]);
     return(
+      <div>
       
       <div class="boxtop">
         <div class="title">เครื่องชงกาแฟอัติโนมัติ (Brewing Coffee Machine)</div>

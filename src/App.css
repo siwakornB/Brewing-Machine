@@ -232,21 +232,6 @@ button:hover{
   line-height: 42px;
 }
 
-.groupname{
-  position: absolute;
-width: 619px;
-left: 20px;
-top: 791px;
-
-border: 3px solid #FFFFFF;
-box-sizing: border-box;
-border-radius: 10px;
-font-size: 22px;
-  line-height: 42px;
-  padding: 30px;
-  margin-bottom: 20px;
-}
-
 .title{
   position: absolute;
 width: 631px;
@@ -340,7 +325,7 @@ color: #FFFFFF;
   .col2{
         left: 20px;
         top: 770px;
+        position: relative;
     }
-    
 }
 
