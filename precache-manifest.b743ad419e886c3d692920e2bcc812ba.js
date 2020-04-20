@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f4fc86d9e8e9d75778ab3eead11e3eb9",
+    "revision": "3d7030710903b6bfe7c533a9db39b534",
     "url": "/Brewing-Machine/index.html"
   },
   {
-    "revision": "7afb6c29fe8f1a02716e",
-    "url": "/Brewing-Machine/static/css/main.acb29f5b.chunk.css"
+    "revision": "0906f4465510e4f4e2e8",
+    "url": "/Brewing-Machine/static/css/main.bf0d8026.chunk.css"
   },
   {
-    "revision": "c96b4bf94082e349d38e",
-    "url": "/Brewing-Machine/static/js/2.6bec6d55.chunk.js"
+    "revision": "db4c081ac96690cc7cb9",
+    "url": "/Brewing-Machine/static/js/2.67221c46.chunk.js"
   },
   {
     "revision": "e8b0ae1bd2f59a85f300b3c60c50941a",
-    "url": "/Brewing-Machine/static/js/2.6bec6d55.chunk.js.LICENSE.txt"
+    "url": "/Brewing-Machine/static/js/2.67221c46.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7afb6c29fe8f1a02716e",
-    "url": "/Brewing-Machine/static/js/main.785e73bf.chunk.js"
+    "revision": "0906f4465510e4f4e2e8",
+    "url": "/Brewing-Machine/static/js/main.b2bdb710.chunk.js"
   },
   {
     "revision": "ba334c3af10901a2902a",
