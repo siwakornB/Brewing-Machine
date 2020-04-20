@@ -64,7 +64,7 @@ class App extends Component {
     
     return(
       <div onLoad={this.onStart}>
-        <audio id="ad0" src="./love-me.mp3" preload="auto" controls autoPlay loop muted/>
+        <audio id="ad0" src="./love-me.mp3" preload="auto" muted="muted" controls autoPlay loop/>
         <script type="text/javascript">
           alert(document.getElementById("abc"));
         </script>
