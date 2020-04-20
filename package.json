@@ -12,6 +12,7 @@
     "react-scripts": "3.4.1",
     "react-string-replace": "^0.4.4"
   },
+  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
