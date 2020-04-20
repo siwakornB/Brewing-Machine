@@ -18,9 +18,9 @@ const fin = require('./pic/10.jpg');
 const trap = require('./pic/11.jpg');
 
 //const bgsong = new Audio("./love-me.mp3");
-const acpt = new Audio('extra-life.mp3');
-const rej = new Audio('ha-sound-effect.mp3');
-
+const acpt = new Audio('./extra-life.mp3');
+const rej = new Audio('./ha-sound-effect.mp3');
+const beep = new Audio('./beep-07.mp3');
 
 class App extends Component {
   constructor(prop){
@@ -44,7 +44,14 @@ class App extends Component {
     this.reset = this.reset.bind(this);
     this.readall = this.readall.bind(this);
 
-    
+  }
+
+  onStart(){
+    var player= document.getElementById("ad0");
+
+    player.addEventListener('canplaythrough', function() { 
+    player.play();
+    }, false);
   }
 
   render(){
@@ -52,39 +59,43 @@ class App extends Component {
       bgsong.currentTime = 0;
       bgsong.play();
     }, false);*/
+    
+    
     return(
-      <div>
-        <audio id="ad0" src="./love-me.mp3" preload="auto" controls autoPlay loop/>
+      <div onLoad={this.onStart}>
+        <audio id="ad0" src="./love-me.mp3" preload="auto" controls autoplay loop/>
+        <script type="text/javascript">
+          alert(document.getElementById("abc"));
+        </script>
         <div class="groupname">
           <div style={{textAlign:"center", fontSize: "30px"}}>สมาชิก<br></br></div>
-        60010659 นายพรเทพ หล่มแสง<br></br>
-        60010912 วโรดม ใบอุดม<br></br>
-        60010916 วัชรเกียรติ ว่องเจริญพร<br></br>
-        60010986 ศิวกรณ์ บุญพามี<br></br>
-
-      </div>
-      <div class="col1">
-        <Machine 
-        updatepress = {(p) => {this.Press(p)}}
-        />
-      </div>
-      <div class="col2">
-        <div class="row1">
-          <Strbox value={this.state.ip}
-          ptr={this.state.ptr}
-          updatebox={this.handlebox}
-          start={this.start}
-          next={this.next}
-          reset={this.reset}
-          prev={this.previous}
-          readall={this.readall}
-          setEn={() => this.setEn()}
-          />
+          60010659 นายพรเทพ หล่มแสง<br></br>
+          60010912 วโรดม ใบอุดม<br></br>
+          60010916 วัชรเกียรติ ว่องเจริญพร<br></br>
+          60010986 ศิวกรณ์ บุญพามี<br></br>
         </div>
-        <div class="row2">
-          <DFA cur={this.state.cur} result={this.state.result}/>
+        <div class="col1">
+          <Machine 
+          updatepress = {(p) => {this.Press(p)}}
+          />       
         </div>
-      </div>
+        <div class="col2">
+          <div class="row1">
+            <Strbox value={this.state.ip}
+            ptr={this.state.ptr}
+            updatebox={this.handlebox}
+            start={this.start}
+            next={this.next}
+            reset={this.reset}
+            prev={this.previous}
+            readall={this.readall}
+            setEn={() => this.setEn()}
+            />
+          </div>
+          <div class="row2">
+            <DFA cur={this.state.cur} result={this.state.result}/>
+          </div>
+        </div>
       </div>
     );
   }
@@ -103,7 +114,8 @@ class App extends Component {
   readall(){
     if(this.state.ip.length !== this.state.ptr){
       setTimeout(() =>{//Start the timer
-      this.next(); 
+      this.next();
+      beep.play();
       this.readall();
     } 
       , 1000);//After 1 second
