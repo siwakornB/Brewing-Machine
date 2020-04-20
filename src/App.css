@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+audio {
+  display:none;
+}
+
 img{
   position: absolute;
   width: 770px;

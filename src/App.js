@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
+import ScrollText from 'react-scroll-text'
 
 //const reactStringReplace = require('react-string-replace')
 
@@ -15,6 +16,10 @@ const hot = require('./pic/8.jpg');
 const money = require('./pic/9.jpg');
 const fin = require('./pic/10.jpg');
 const trap = require('./pic/11.jpg');
+
+//const bgsong = new Audio("./love-me.mp3");
+const acpt = new Audio('extra-life.mp3');
+const rej = new Audio('ha-sound-effect.mp3');
 
 
 class App extends Component {
@@ -38,11 +43,18 @@ class App extends Component {
     this.start = this.start.bind(this);
     this.reset = this.reset.bind(this);
     this.readall = this.readall.bind(this);
+
+    
   }
+
   render(){
-      
+    /*bgsong.addEventListener('ended', function () {
+      bgsong.currentTime = 0;
+      bgsong.play();
+    }, false);*/
     return(
       <div>
+        <audio id="ad0" src="./love-me.mp3" preload="auto" controls autoPlay loop/>
         <div class="groupname">
           <div style={{textAlign:"center", fontSize: "30px"}}>สมาชิก<br></br></div>
         60010659 นายพรเทพ หล่มแสง<br></br>
@@ -151,8 +163,10 @@ class App extends Component {
     if(this.state.ip.length === this.state.ptr){
       if(this.state.cur === 'f'){
         this.setState({result:"Accept"});
+        acpt.play();
       }else{
         this.setState({result:"Reject"});
+        rej.play();
       }
     }else{
       this.setState({result:""});
@@ -321,7 +335,7 @@ class Strbox extends Component{
       <div>
       
       <div class="boxtop">
-        <div class="title">เครื่องชงกาแฟอัติโนมัติ (Brewing Coffee Machine)</div>
+        <div class="title"><ScrollText>เครื่องชงกาแฟอัติโนมัติ (Brewing Coffee Machine)</ScrollText></div>
         <hr></hr>
         <div class="string" >
           <div style={{display: 'inline'}}>String: {this.props.value.substring(0,this.props.ptr)}</div>
