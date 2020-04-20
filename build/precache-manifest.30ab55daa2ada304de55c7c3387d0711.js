@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f4fc86d9e8e9d75778ab3eead11e3eb9",
+    "revision": "cfc78a8c05c5db47d5ddfe87d1c88021",
     "url": "/Brewing-Machine/index.html"
   },
   {
-    "revision": "7afb6c29fe8f1a02716e",
+    "revision": "48af8c98bd3050e4f17d",
     "url": "/Brewing-Machine/static/css/main.acb29f5b.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Brewing-Machine/static/js/2.6bec6d55.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7afb6c29fe8f1a02716e",
-    "url": "/Brewing-Machine/static/js/main.785e73bf.chunk.js"
+    "revision": "48af8c98bd3050e4f17d",
+    "url": "/Brewing-Machine/static/js/main.c5447228.chunk.js"
   },
   {
     "revision": "ba334c3af10901a2902a",

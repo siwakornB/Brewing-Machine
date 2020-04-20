@@ -48,6 +48,7 @@ class App extends Component {
 
   onStart(){
     var player= document.getElementById("ad0");
+    player.muted = false;
 
     player.addEventListener('canplaythrough', function() { 
     player.play();
@@ -63,7 +64,7 @@ class App extends Component {
     
     return(
       <div onLoad={this.onStart}>
-        <audio id="ad0" src="./love-me.mp3" preload="auto" controls autoplay loop/>
+        <audio id="ad0" src="./love-me.mp3" preload="auto" controls autoPlay loop muted/>
         <script type="text/javascript">
           alert(document.getElementById("abc"));
         </script>

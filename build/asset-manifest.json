@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Brewing-Machine/static/css/main.acb29f5b.chunk.css",
-    "main.js": "/Brewing-Machine/static/js/main.785e73bf.chunk.js",
-    "main.js.map": "/Brewing-Machine/static/js/main.785e73bf.chunk.js.map",
+    "main.js": "/Brewing-Machine/static/js/main.c5447228.chunk.js",
+    "main.js.map": "/Brewing-Machine/static/js/main.c5447228.chunk.js.map",
     "runtime-main.js": "/Brewing-Machine/static/js/runtime-main.cb2a0e2f.js",
     "runtime-main.js.map": "/Brewing-Machine/static/js/runtime-main.cb2a0e2f.js.map",
     "static/js/2.6bec6d55.chunk.js": "/Brewing-Machine/static/js/2.6bec6d55.chunk.js",
     "static/js/2.6bec6d55.chunk.js.map": "/Brewing-Machine/static/js/2.6bec6d55.chunk.js.map",
     "index.html": "/Brewing-Machine/index.html",
-    "precache-manifest.36592b290433c42cd893bb13dc6e078c.js": "/Brewing-Machine/precache-manifest.36592b290433c42cd893bb13dc6e078c.js",
+    "precache-manifest.30ab55daa2ada304de55c7c3387d0711.js": "/Brewing-Machine/precache-manifest.30ab55daa2ada304de55c7c3387d0711.js",
     "service-worker.js": "/Brewing-Machine/service-worker.js",
     "static/css/main.acb29f5b.chunk.css.map": "/Brewing-Machine/static/css/main.acb29f5b.chunk.css.map",
     "static/js/2.6bec6d55.chunk.js.LICENSE.txt": "/Brewing-Machine/static/js/2.6bec6d55.chunk.js.LICENSE.txt",
@@ -28,6 +28,6 @@
     "static/js/runtime-main.cb2a0e2f.js",
     "static/js/2.6bec6d55.chunk.js",
     "static/css/main.acb29f5b.chunk.css",
-    "static/js/main.785e73bf.chunk.js"
+    "static/js/main.c5447228.chunk.js"
   ]
 }
