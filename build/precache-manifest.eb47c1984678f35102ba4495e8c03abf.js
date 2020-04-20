@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2592a09238a9abe0bddf8b3b553bd551",
+    "revision": "2369ce7659afb0bcebd7ee9d0cb6f945",
     "url": "/Brewing-Coffee-Machine/index.html"
   },
   {
-    "revision": "e0284536d054b1ded409",
+    "revision": "8501b2cea4ededd1ef5c",
     "url": "/Brewing-Coffee-Machine/static/css/main.acb29f5b.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Brewing-Coffee-Machine/static/js/2.c8c0aa84.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e0284536d054b1ded409",
-    "url": "/Brewing-Coffee-Machine/static/js/main.ecfe2825.chunk.js"
+    "revision": "8501b2cea4ededd1ef5c",
+    "url": "/Brewing-Coffee-Machine/static/js/main.2281dc34.chunk.js"
   },
   {
     "revision": "59b8a845ae67682c0f0d",
